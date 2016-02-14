@@ -11,53 +11,6 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 */
 
-var work = {
-            "jobs":[
-                    {"Employer": "Aricent Technologies",
-                     "Title": "Software Engineer - Trainee",
-                     "Location": "Gurgaon, India",
-                     "Dates": "Sep 13 2010 - Dec 13 2010",
-                     "Description": "Training on Data structures, Computer systems, Unix environment. Implemented DNS as final project using Linux Socket API's. Cache implementation was done as well"
-                    },
-                    {"Employer":"Aricent Technologies",
-                     "Title": "Software Engineer",
-                     "Location": "Bangalore",
-                     "Dates": "Dec 13, 2010 - Feb 10, 2012",
-                     "Description": "Implemented SRIO, EMAC module in LTE chipsets"
-                    },
-                    {"Employer": "Samsung India Software operations",
-                     "Title": "Senior Software Engineer",
-                     "Location": "Bangalore",
-                     "Dates": "Feb 20, 2012 - July 20, 2014",
-                     "Description": "Took ownership of LTE control stack including RRM, L1LC and HAL modules.  Performed TDD verification activities. Worked on MBSFN, RSTD."
-                    },
-                    {"Employer": "Arizona State University",
-                     "Title": "Graduate student worker - Tutor at TRIO Center",
-                     "Location": "ASU-Polytechnic, Mesa",
-                     "Dates":"Aug 2014 - Aug 2015",
-                     "Description": "Tutor Undergrad engineering students in Software engineering, Maths and Physics"
-                    },
-                    {"Employer": "Arizona State University",
-                     "Title": "Teaching Assistant",
-                     "Location": "ASU-Polytechnic, Mesa",
-                     "Dates":"Aug 2015 - Dec 2015",
-                     "Description": "Teaching assistant for Graduate level Computer Architecture course as well as Undergraduate level Microcomputer Architecture and PLP coding"
-                    },
-                    {"Employer": "Arizona State University",
-                     "Title": "Teaching Assistant",
-                     "Location": "ASU-Polytechnic, Mesa",
-                     "Dates":"Jan 2015 - May 2016",
-                     "Description": "Teaching assistant for Undergraduate level Microcomputer Architecture and PLP coding"
-                    },
-                    {"Employer": "Arizona State University",
-                     "Title": "Teaching Assistant",
-                     "Location": "ASU-Polytechnic, Mesa",
-                     "Dates":"Jan 2015 - May 2016",
-                     "Description": "Graduate student services assistant(Grader) for Undergraduate level Microcomputer Architecture and PLP coding"
-                    }
-                ]
-            };
-
 /* Have not included academic projects yet */
 var projects = {
                 "project" :
@@ -123,6 +76,54 @@ var education = {
     ]
 };
 
+
+var work = {
+            "jobs":[
+                    {"Employer": "Aricent Technologies",
+                     "Title": "Software Engineer - Trainee",
+                     "Location": "Gurgaon, India",
+                     "Dates": "Sep 13 2010 - Dec 13 2010",
+                     "Description": "Training on Data structures, Computer systems, Unix environment. Implemented DNS as final project using Linux Socket API's. Cache implementation was done as well"
+                    },
+                    {"Employer":"Aricent Technologies",
+                     "Title": "Software Engineer",
+                     "Location": "Bangalore",
+                     "Dates": "Dec 13, 2010 - Feb 10, 2012",
+                     "Description": "Implemented SRIO, EMAC module in LTE chipsets"
+                    },
+                    {"Employer": "Samsung India Software operations",
+                     "Title": "Senior Software Engineer",
+                     "Location": "Bangalore",
+                     "Dates": "Feb 20, 2012 - July 20, 2014",
+                     "Description": "Took ownership of LTE control stack including RRM, L1LC and HAL modules.  Performed TDD verification activities. Worked on MBSFN, RSTD."
+                    },
+                    {"Employer": "Arizona State University",
+                     "Title": "Graduate student worker - Tutor at TRIO Center",
+                     "Location": "ASU-Polytechnic, Mesa",
+                     "Dates":"Aug 2014 - Aug 2015",
+                     "Description": "Tutor Undergrad engineering students in Software engineering, Maths and Physics"
+                    },
+                    {"Employer": "Arizona State University",
+                     "Title": "Teaching Assistant",
+                     "Location": "ASU-Polytechnic, Mesa",
+                     "Dates":"Aug 2015 - Dec 2015",
+                     "Description": "Teaching assistant for Graduate level Computer Architecture course as well as Undergraduate level Microcomputer Architecture and PLP coding"
+                    },
+                    {"Employer": "Arizona State University",
+                     "Title": "Teaching Assistant",
+                     "Location": "ASU-Polytechnic, Mesa",
+                     "Dates":"Jan 2015 - May 2016",
+                     "Description": "Teaching assistant for Undergraduate level Microcomputer Architecture and PLP coding"
+                    },
+                    {"Employer": "Arizona State University",
+                     "Title": "Teaching Assistant",
+                     "Location": "ASU-Polytechnic, Mesa",
+                     "Dates":"Jan 2015 - May 2016",
+                     "Description": "Graduate student services assistant(Grader) for Undergraduate level Microcomputer Architecture and PLP coding"
+                    }
+                ]
+            };
+
 if (bio.Skills.length > 0) {
     $("#header").append(HTMLskillsStart);
     var length_of_array = bio.Skills.length;
@@ -133,4 +134,11 @@ if (bio.Skills.length > 0) {
          $("#skills").append(formattedtext);
          i += 1;
     }
+}
+
+for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedemployer = HTMLworkEmployer.replace("%data%", work.jobs[job].Employer);
+    var formattedtitle = HTMLworkTitle.replace("%data%", work.jobs[job].Title);
+    $(".work-entry:last").append(formattedemployer.concat(formattedtitle));
 }
