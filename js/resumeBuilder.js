@@ -122,3 +122,15 @@ var education = {
     }
     ]
 };
+
+if (bio.Skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    var length_of_array = bio.Skills.length;
+    var i = 0
+    while ( i < length_of_array)
+    {
+         var formattedtext = HTMLskills.replace("%data%", bio.Skills[i]);
+         $("#skills").append(formattedtext);
+         i += 1;
+    }
+}
