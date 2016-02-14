@@ -135,10 +135,29 @@ if (bio.Skills.length > 0) {
          i += 1;
     }
 }
+/*
+ * var HTMLworkStart = '<div class="work-entry"></div>';
+var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkTitle = ' - %data%</a>';
+var HTMLworkDates = '<div class="date-text">%data%</div>';
+var HTMLworkLocation = '<div class="location-text">%data%</div>';
+var HTMLworkDescription = '<p><br>%data%</p>'
+*/
 
 for (job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
     var formattedemployer = HTMLworkEmployer.replace("%data%", work.jobs[job].Employer);
     var formattedtitle = HTMLworkTitle.replace("%data%", work.jobs[job].Title);
-    $(".work-entry:last").append(formattedemployer.concat(formattedtitle));
+    $(".work-entry:last").append( formattedemployer + formattedtitle);
+    var formattedloc = HTMLworkLocation.replace("%data%", work.jobs[job].Location);
+    $(".work-entry:last").append(formattedloc);
+    var formatteddates = HTMLworkDates.replace("%data%", work.jobs[job].Dates);
+    $(".work-entry:last").append(formatteddates);
+    var formatteddesc = HTMLworkDescription.replace("%data", work.jobs[job].Description);
+    $(".work-entry:last").append(formatteddesc);
+    
+}
+
+for(job in work.jobs){
+    
 }
