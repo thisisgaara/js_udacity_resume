@@ -13,7 +13,7 @@ var bio = {
     "Name" : "Vignesh Kannan",
     "Role": "Systems programmer",
     "Welcome_Message": "I am a Software engineering graduate student looking for full time opportunities",
-    "Image": "https://assets.about.me/background/users/t/h/i/thisisvignesh_1425838838_94.jpg",
+    "Image": "images/bio.jpg",
     "Contacts": { "Mobile" : "480-208-3172",
                    "Email" : "vkannan7@asu.edu",
                    "Github_handle" : "thisisgaara",
